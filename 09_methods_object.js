@@ -7,7 +7,7 @@ const student2 = { name: "Vijay", mark: 89 };
 console.log(Object.values(student2));
 
 // entries()
-const student3 = { roll: 5, section: "B" };
+const stude3 = { roll: 5, section: "B" };
 console.log(Object.entries(student3));
 
 // assign()
