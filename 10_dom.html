@@ -3,14 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Get Element By Id</title>
+    <title>Dom Manuplication</title>
   </head>
   <body>
     <h1 id="myh">before modification</h1>
+    <h1 class="myh1">before modification</h1>
+    <h2>before modification</h2>
+    <h1 style="background-color: red; color: wheat" id="Modification">
+      This is red background color with weat color text
+    </h1>
 
     <script>
       const heading = document.getElementById("myh");
-      heading.textContent = "After Modification !";
+      heading.textContent = "After Modification Using  Element By Id !";
+
+      const heading1 = document.getElementsByClassName("myh1");
+      heading1[0].textContent =
+        "After Modification Using  Element By Class Name !";
+
+      const heading2 = document.getElementsByTagName("h2");
+      heading2[0].textContent =
+        "After Modification Using  Element By Tag Name!";
+
+      const che = document.getElementById("Modification");
+      che.style.color = "black";
+      che.style.backgroundColor = "wheat";
     </script>
   </body>
 </html>
