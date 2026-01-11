@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MockAPI Demo</title>
+    <style>
+      #fetchButton {
+        background: aquamarine;
+        padding: 10px;
+        border-radius: 12px;
+      } 
+    </style>
+  </head>
+  <body>
+    <h2>Demo API</h2>
+    <button id="fetchButton">Fetch Data</button>
+
+    <ul id="output"></ul>
+
+    <script>
+      document.getElementById("fetchButton").addEventListener("click", () => {
+        fetch("https://694e23abb5bc648a93bf7028.mockapi.io/stephen1")
+          .then((response) => response.json())
+          .then((data) => {
+            const list = document.getElementById("output");
+            list.innerHTML = "";
+
+            data.forEach((item) => {
+              list.innerHTML += `
+                <li>
+                  Name: ${item.name} <br>
+                  Age: ${item.age} <br>
+                  Phone: ${item.phone}
+                </li><hr>
+              `;
+            });
+          })
+          .catch((error) => {
+            console.error("Error fetching data:", error);
+          });
+      });
+    </script>
+  </body>
+</html>

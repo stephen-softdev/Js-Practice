@@ -1,5 +1,5 @@
 const date = new Date();
-console.log(date);
+console.log( " This is a normal formate of date :",date);
 
 // custom date time formate
 
@@ -17,8 +17,8 @@ console.log("current time:", hour, ":", minute, ":", second);
 
 if (hour > 12) {
   apm = "PM";
-  console.log("current time:", hour - 12, ":", minute, ":", second, " ", apm);
+  console.log("current time:", hour - 12, ":", minute, ":", second, "", apm);
 } else {
   apm = "AM";
-  console.log(" Current date:", date1, "-", monthname, "-", year, " ", apm);
+  console.log(" Current date:", date1, "-", monthname, "-", year, "", apm);
 }

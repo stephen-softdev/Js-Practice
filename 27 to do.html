@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>To Do App - CRUD</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    .todo-container {
+      max-width: 400px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    input {
+      width: 70%;
+      padding: 8px;
+    }
+    button {
+      padding: 8px 10px;
+      cursor: pointer;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      display: flex;
+      justify-content: space-between;
+      background: #eee;
+      margin: 8px 0;
+      padding: 8px;
+      border-radius: 4px;
+    }
+    .actions button {
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="todo-container">
+  <h2>📝 To Do App (CRUD)</h2>
+
+  <input type="text" id="todoInput" placeholder="Enter task..." />
+  <button onclick="addTodo()">Add</button>
+
+  <ul id="todoList"></ul>
+</div>
+
+<script>
+  let todos = JSON.parse(localStorage.getItem("todos")) || [];
+  let editIndex = null;
+
+  function renderTodos() {
+    const list = document.getElementById("todoList");
+    list.innerHTML = "";
+
+    todos.forEach((todo, index) => {
+      list.innerHTML += `
+        <li>
+          <span>${todo}</span>
+          <div class="actions">
+            <button onclick="editTodo(${index})">✏️</button>
+            <button onclick="deleteTodo(${index})">❌</button>
+          </div>
+        </li>
+      `;
+    });
+
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }
+
+  function addTodo() {
+    const input = document.getElementById("todoInput");
+    const value = input.value.trim();
+
+    if (value === "") return alert("Task enter pannu da 😅");
+
+    if (editIndex === null) {
+      // CREATE
+      todos.push(value);
+    } else {
+      // UPDATE
+      todos[editIndex] = value;
+      editIndex = null;
+    }
+
+    input.value = "";
+    renderTodos();
+  }
+
+  function editTodo(index) {
+    document.getElementById("todoInput").value = todos[index];
+    editIndex = index;
+  }
+
+  function deleteTodo(index) {
+    // DELETE
+    todos.splice(index, 1);
+    renderTodos();
+  }
+
+  // READ (on load)
+  renderTodos();
+</script>
+
+</body>
+</html>

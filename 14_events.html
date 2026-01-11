@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        padding: 12px;
+        border-radius: 12px;
+        background-color: blueviolet;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>This is click event</h1>
+    <button onclick="alert('the button is clicked')">click me !</button>
+    <h1>This is Mouse Hover</h1>
+    <button onmouseover="alert('the mouse on the button')">Hover me!</button>
+    <h1>This is a Key Down</h1>
+    <input type="text" onkeydown="alert('Key down!')" />
+    <h1>This is Form submit</h1>
+    <form onsubmit="alert('form submeted !')">
+      <label for="">User name:</label><br />
+      <input type="text" /><br /><br />
+      <button type="submit">submit</button>
+    </form>
+    <h1>Event Listener click event</h1>
+    <button id="mybutton">click me</button>
+  </body>
+  <script>
+    const z = document.querySelector("#mybutton");
+    z.addEventListener("click", () => {
+      alert(" dai nee button na click panita");
+    });
+  </script>
+</html>
