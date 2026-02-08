@@ -5,13 +5,16 @@
     <title>CRUD Buttons</title>
   </head>
   <body>
-    <h2>Add / Edit / Delete – Name Only</h2>
+    <h2>Add / Edit / Delete / update</h2>
 
     <input type="text" id="nameInput" placeholder="Enter name" />
     <button onclick="addData()">Add</button>
 
-    <ul id="list"></ul>
-
+    <table>
+      <tr>
+        <td id="list"></td>
+      </tr>
+    </table>
     <script>
       const API_URL = "https://694e23abb5bc648a93bf7028.mockapi.io/stephen1";
       let editId = null;
@@ -35,10 +38,9 @@
           });
       }
 
-      // ADD / UPDATE
+      // ADD //UPDATE
       function addData() {
         const name = document.getElementById("nameInput").value;
-
         if (editId) {
           fetch(`${API_URL}/${editId}`, {
             method: "PUT",
@@ -73,6 +75,7 @@
           method: "DELETE",
         }).then(() => getData());
       }
+      //update
 
       getData();
     </script>

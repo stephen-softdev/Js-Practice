@@ -45,3 +45,37 @@ console.log(obj);
 const base = { type: "Gaming" };
 const newObj = Object.create(base);
 console.log(newObj.type);
+
+Object.assign(target, source1, source2);
+
+console.log(target);
+
+const user = { name: "stephen", age: 21 };
+
+console.log(Object.keys(user));
+
+const user1 = { name: "Alice", age: 25 };
+
+console.log(Object.values(user));
+
+const user2 = { name: "Alice", age: 25 };
+
+console.log(Object.entries(user));
+
+const car2 = { brand: "Toyota" };
+
+Object.freeze(car2);
+
+car.brand = "Honda";
+car.color = "red";
+console.log(car2);
+
+const person = { name: "Bob", age: 30 };
+
+Object.seal(person);
+
+person.age = 31;
+person.city = "NY";
+delete person.name;
+
+console.log(person);

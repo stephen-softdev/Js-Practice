@@ -17,3 +17,27 @@ console.log(arr2);
 let arr3 = [10, 20, 30];
 arr3.unshift(5);
 console.log(arr3);
+
+//includes
+let arr4 = [1, 2, 3];
+
+console.log(arr.includes(2));
+
+// indexof
+let arr5 = [1, 2, 3, 2];
+
+console.log(arr.indexOf(2));
+
+
+console.log(arr.lastIndexOf(2));
+// last index of the value
+
+let arr6 = ["Hello", "World"];
+console.log(arr6.join(" "));
+// join the 2 seprated value
+
+let arr7 = [1, 2, 3];
+console.log(arr.toString());
+// convert the numbeer into string
+
+
