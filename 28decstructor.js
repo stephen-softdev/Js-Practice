@@ -8,4 +8,14 @@ const data = {
 };
 
 const { person, age } = data;
-console.log(age,person);
+console.log(age, person);
+
+res = [...sne, 6, 7, 8, 9];
+console.log(res);
+
+const fun = (...pa) => {
+  var total = 0;
+  pa.forEach((result) => (total += result));
+  return total;
+};
+console.log(fun(1, 2, 3, 4, 5));
